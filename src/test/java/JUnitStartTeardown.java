@@ -2,16 +2,15 @@ import de.cgi.selenium.pageobjects.HornbachMainPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class JUnitStartTeardown {
 
-    private ChromeDriver driver;
+    private WebDriver driver;
 
-    public JUnitStartTeardown(){
+    public JUnitStartTeardown() {
         WebDriverManager.chromedriver().setup();
     }
 

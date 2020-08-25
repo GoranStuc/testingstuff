@@ -3,6 +3,7 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        JUnitStartTeardown.class })
+        JUnitStartTeardown.class,
+        NineGagTests.class})
 public class TestSuiteJUnit {
 }
