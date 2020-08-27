@@ -1,5 +1,9 @@
-JUnitStartTeardown.class
+de\cgi\selenium\ParallelSuite$1.class
+de\cgi\selenium\ParallelSuite.class
+de\cgi\selenium\ParallelParameterized.class
 SeleniumFirstTest.class
 JUnitTestExample.class
 de\cgi\selenium\driver\helper\ChromeDriverBuilder.class
 de\cgi\selenium\pageobjects\HornbachMainPage.class
+de\cgi\selenium\pageobjects\NineGagMainPage.class
+de\cgi\selenium\ParallelParameterized$1.class

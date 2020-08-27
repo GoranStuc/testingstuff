@@ -17,7 +17,7 @@ public class NineGagMainPage {
     }
 
     public void goToFresh(WebDriver driver){
-        driver.findElement(trending).click();
+        driver.findElement(fresh).click();
     }
 
     public void closePopup(WebDriver driver){

@@ -5,6 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class JUnitStartTeardown {
 
@@ -12,12 +14,11 @@ public class JUnitStartTeardown {
 
     public JUnitStartTeardown() {
         WebDriverManager.chromedriver().setup();
+        WebDriverManager.edgedriver().setup();
+        WebDriverManager.firefoxdriver().setup();
     }
 
-    @Before
-    public void setupTest() {
-        driver = new ChromeDriver();
-    }
+
 
     @After
     public void teardown() {
@@ -28,6 +29,26 @@ public class JUnitStartTeardown {
 
     @Test
     public void test() {
+        driver = new ChromeDriver();
+        driver.get("https://www.hornbach.de/");
+        HornbachMainPage hbHomePage = new HornbachMainPage();
+        hbHomePage.hoverOverSortiment(driver);
+        hbHomePage.goToSortiment(driver);
+        System.out.println(driver.getTitle());
+    }
+    @Test
+    public void testE() {
+        driver = new EdgeDriver();
+        driver.get("https://www.hornbach.de/");
+        HornbachMainPage hbHomePage = new HornbachMainPage();
+        hbHomePage.hoverOverSortiment(driver);
+        hbHomePage.goToSortiment(driver);
+        System.out.println(driver.getTitle());
+    }
+
+    @Test
+    public void testF() {
+        driver = new FirefoxDriver();
         driver.get("https://www.hornbach.de/");
         HornbachMainPage hbHomePage = new HornbachMainPage();
         hbHomePage.hoverOverSortiment(driver);
