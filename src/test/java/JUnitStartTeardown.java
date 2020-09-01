@@ -14,7 +14,6 @@ public class JUnitStartTeardown {
 
     public JUnitStartTeardown() {
         WebDriverManager.chromedriver().setup();
-        WebDriverManager.edgedriver().setup();
         WebDriverManager.firefoxdriver().setup();
     }
 
@@ -30,15 +29,6 @@ public class JUnitStartTeardown {
     @Test
     public void test() {
         driver = new ChromeDriver();
-        driver.get("https://www.hornbach.de/");
-        HornbachMainPage hbHomePage = new HornbachMainPage();
-        hbHomePage.hoverOverSortiment(driver);
-        hbHomePage.goToSortiment(driver);
-        System.out.println(driver.getTitle());
-    }
-    @Test
-    public void testE() {
-        driver = new EdgeDriver();
         driver.get("https://www.hornbach.de/");
         HornbachMainPage hbHomePage = new HornbachMainPage();
         hbHomePage.hoverOverSortiment(driver);
