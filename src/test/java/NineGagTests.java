@@ -5,16 +5,19 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class NineGagTests {
 
     private WebDriver driver;
 
-    public NineGagTests() {
-        WebDriverManager.chromedriver().setup();
-        WebDriverManager.firefoxdriver().setup();
-    }
 
     @After
     public void teardown() {
@@ -25,7 +28,11 @@ public class NineGagTests {
 
     @Test
     public void testChrome() {
-        driver = new ChromeDriver();
+        try {
+            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),new ChromeOptions());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
         driver.get("https://9gag.com/");
         NineGagMainPage nineGagMainPage = new NineGagMainPage();
         //good way to wait for something
@@ -43,7 +50,11 @@ public class NineGagTests {
 
     @Test
     public void testFireFox()  {
-        driver = new FirefoxDriver();
+        try {
+            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),new FirefoxOptions());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
         driver.get("https://9gag.com/");
         NineGagMainPage nineGagMainPage = new NineGagMainPage();
         //good way to wait for something
